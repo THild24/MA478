@@ -4,13 +4,13 @@ library(ggplot2)
 library(sf)
 library(broom)
 
-crime <- read.csv("Final Project/crime.csv") %>% 
+crime <- read.csv("crime.csv") %>% 
   select(-c(X))
 
-pop <- read.csv("Final Project/pop.csv")
-unemp <- read.csv("Final Project/unemp.csv")
-wealth <- read.csv("Final Project/wealth.csv")
-ym <- read.csv("Final Project/ym.csv")
+pop <- read.csv("pop.csv")
+unemp <- read.csv("unemp.csv")
+wealth <- read.csv("wealth.csv")
+ym <- read.csv("ym.csv")
 colnames(pop) <- c("X", "Population")
 colnames(unemp) <- c("X", "Unemployment")
 colnames(wealth) <- c("X", "Wealth")
@@ -31,7 +31,7 @@ ggplot(total_burglaries, aes(x = time, y = total)) +
   theme_classic()
 
 
-shape <- read_sf("Final Project/chipocsouth.shp")
+shape <- read_sf("chipocsouth.shp")
 
 area_count <- shape %>% 
   select(count)
